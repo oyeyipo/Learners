@@ -62,7 +62,7 @@ ROOT_URLCONF = 'learning_log.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['app/learning_logs/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -138,11 +138,11 @@ BOOTSTRAP3 = {
 
 
 
-PROJECT_DIR = os.path.dirname(__file__) # this is not Django setting.
-TEMPLATE_DIRS = (
-    os.path.join(PROJECT_DIR, "templates"),
-    # here you can add another templates directory if you wish.
-)
+# PROJECT_DIR = os.path.dirname(__file__) # this is not Django setting.
+# TEMPLATE_DIRS = (
+#     os.path.join(PROJECT_DIR, "templates"),
+#     # here you can add another templates directory if you wish.
+# )
 
 
 
