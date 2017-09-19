@@ -152,13 +152,14 @@ if cwd == '/app' or cwd[:4] == '/tmp':
     ALLOWED_HOSTS = ['*']
     DEBUG = True
 
+    # /app/learning_logs/templates/Learning_logs/index.html
 
 
     # Static asset configuration
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
     TEMPLATE_DIRS = (
-        os.path.join(BASE_DIR, 'templates/'),
+        os.path.join(BASE_DIR, 'templates'),
     )
 
     STATIC_ROOT = 'staticfiles'
