@@ -62,7 +62,7 @@ ROOT_URLCONF = 'learning_log.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, '/templates/')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -158,9 +158,6 @@ if cwd == '/app' or cwd[:4] == '/tmp':
     # Static asset configuration
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-    TEMPLATE_DIRS = (
-        os.path.join(BASE_DIR, 'templates'),
-    )
 
     STATIC_ROOT = 'staticfiles'
     STATICFILES_DIRS = (
