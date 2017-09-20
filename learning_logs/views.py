@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, Http404
 from django.contrib.auth.decorators import login_required
@@ -9,7 +9,7 @@ from .forms import TopicForm, EntryForm
 
 def index(request):
 	"""The home page for Learning Log"""
-	return render(request, 'Learning_logs/index.html')
+	return render(request, 'learning_logs/index.html', {})
 
 @login_required
 def topics(request):
@@ -21,7 +21,7 @@ def topics(request):
 @login_required
 def topic(request, topic_id):
 	"""Show all topics and all its entries."""
-	topic = Topic.objects.get(id=topic_id)
+	topic = get_object_or_404(Topic, id=topic_id)
 	# Make sure the topic belongs to the current user.
 	check_topic_owner(request, topic)
 
