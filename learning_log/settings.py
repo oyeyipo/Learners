@@ -147,6 +147,16 @@ BOOTSTRAP3 = {
 #     # here you can add another templates directory if you wish.
 # )
 
+STATICFILES_DIRS = [
+    #this static ryt here will not be able to serve, it is a long term storage
+    os.path.join(BASE_DIR, "learning_log/static"),
+    os.path.join(BASE_DIR, "learning_logs/static"),
+]
+
+# will be served
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static-serve")
+
+
 
 
 # Heroku settings
@@ -154,6 +164,7 @@ cwd = os.getcwd()
 print("--- CWD ---\n", cwd, "\n---\n")
 if cwd == '/app' or cwd[:4] == '/tmp':
     import dj_database_url
+    
     DATABASES = {
         'default': dj_database_url.config(default='postgres://localhost')
     }
@@ -162,8 +173,9 @@ if cwd == '/app' or cwd[:4] == '/tmp':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     
     # Only allow heroku to host the project.
-    ALLOWED_HOSTS = ['wale-log.herokuapp.com']
+    ALLOWED_HOSTS = ['*']  #TODO: Add walelog.herokuapp.com
     DEBUG = False
+    
 
     # /app/learning_logs/templates/Learning_logs/index.html
 

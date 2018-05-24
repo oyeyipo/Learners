@@ -9,10 +9,9 @@
 	
 	<title>Learners Log</title>
 
-	<link type="text/css" rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}"  media="screen,projection"/>
-
 	<link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
 
+	<link type="text/css" rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}"  media="screen,projection"/>
 
 	<link rel="stylesheet" type="text/css" href='{% static "font-awesome/css/font-awesome.min.css" %}'>
 
@@ -21,7 +20,9 @@
 </head>
 <body>
 
+
 {% block header %}
+
 
 {% endblock header %}
 
@@ -31,10 +32,10 @@
 
 {% endblock content %}
 
-		<script src="{% static 'jquery.min.js' %}"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-		<script src="{% static 'app.js' %}"></script>
+<script src="{% static 'jquery.min.js' %}"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'app.js' %}"></script>
 
 </body>
 </html>

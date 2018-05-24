@@ -1,16 +1,53 @@
 {% extends "learning_logs/base.html" %}
 
+
+
 {% block header %}
-	<div class="jumbotron">
-		<h1>Track your learning.</h1>
-	</div>
+	
 {% endblock header %}
 
 {% block content %}
-	<h2>
-		<a href="{% url 'users:register' %}">Register an account</a> to make your own Learning Log, and list the topics you're learning about.
-	</h2>
-	<h2>
-		Whenever you learn something new about a topic, make an entry summarizing what you've learned.
-	</h2>
+	<div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Learners Journal</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                 	 {% if user.is_authenticated %}
+					<li><a>Hello, {{ user.username }}.</a></li>
+					{#  <li><a href="{% url 'learning_logs:topics' %}">topics</a></li> #}
+					<li><a href="{% url 'users:logout' %}">log out</a></li>
+					{% else %}
+					<li><a href="{% url 'users:register' %}">register</a></li>
+					<li><a href="{% url 'users:login' %}">log in</a>
+					{% endif %}
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <h1 class="cover-heading">Welcome to Learners Log.</h1>
+            <p class="lead">Whenever you learn something new about a topic, make an entry summarizing what you've learned.</p>
+            <p class="lead">
+              <a href="{% url 'users:register' %}" class="btn btn-lg btn-default">Register an account</a>
+            </p>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Learners Logs &copy; 2016, by <a href="https://oyeyipoolawale.herokuapp.com">Olawale</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
 {% endblock content %}

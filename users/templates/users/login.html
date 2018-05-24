@@ -1,4 +1,4 @@
-{% extends "learning_logs/base.html" %}
+{% extends "learning_logs/base2.html" %}
 {% load bootstrap3 %}
 
 
@@ -16,7 +16,7 @@
     {% buttons %}
     	<button name="submit" class="btn btn-primary">log in</button>
     {% endbuttons %}
-    <input type="hidden" name="next" value="{% url 'learning_logs:index' %}">
+    <input type="hidden" name="next" value="{% url 'learning_logs:topics' %}">
   </form>
   
 
